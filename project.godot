@@ -36,6 +36,7 @@ project/assembly_name="Tbd_1"
 
 movie_writer/movie_file="/Users/vihara/Downloads/tbd-1/movies/1.mp4"
 movie_writer/disable_vsync=true
+movie_writer/fps=24
 
 [input]
 

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dpl6dgdbq4dnw"]
 
-[ext_resource type="Script" uid="uid://bs4xu55sv5v4n" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://bs4xu55sv5v4n" path="res://main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bku4iyif5yjci" path="res://assets/play Button.png" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://d0m117be476nk" path="res://assets/Quit Button.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://dwtbom80ks4ru" path="res://assets/New Piskel.png" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://1w53nx08jems" path="res://assets/New Piskel-1.png.png" id="5_8ln24"]
 
 [node name="MainMenu" type="Control" unique_id=547806810]
 layout_mode = 3
@@ -45,5 +46,17 @@ texture_normal = ExtResource("2_bqqt6")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="tutorial" type="Button" parent="." unique_id=1897094922]
+layout_mode = 0
+offset_left = 142.33334
+offset_top = -105.333336
+offset_right = 182.33334
+offset_bottom = -65.333336
+theme_override_colors/icon_normal_color = Color(0.5676708, 0.9761624, 0.9013983, 1)
+theme_override_font_sizes/font_size = 6
+icon = ExtResource("5_8ln24")
+flat = true
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]

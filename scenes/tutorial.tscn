@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cofjpk3xlqrme"]
+
+[ext_resource type="Texture2D" uid="uid://bmltpd2urv6qe" path="res://assets/Quit Button-1.png.png" id="1_8ho6b"]
+[ext_resource type="Script" uid="uid://c3hm8pl7vvvsw" path="res://scenes/tutorial.gd" id="1_ph3nu"]
+[ext_resource type="Texture2D" uid="uid://bqvkt3jubsvrc" path="res://assets/New Piskel (11).png" id="2_ph3nu"]
+
+[node name="tutorial" type="Control" unique_id=371829962]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ph3nu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1811298039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="TextureButton" parent="." unique_id=611845207]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 513.0
+offset_top = 433.0
+offset_right = 659.0
+offset_bottom = 483.0
+texture_normal = ExtResource("1_8ho6b")
+ignore_texture_size = true
+
+[node name="StaticBody2D" type="TextureRect" parent="." unique_id=1206008732]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 39.0
+offset_right = 729.0
+offset_bottom = 358.0
+texture = ExtResource("2_ph3nu")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
