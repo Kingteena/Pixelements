@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfe1fvvb1oag1"]
+
+[ext_resource type="Script" uid="uid://cxljwdbun7mp" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=623811147]
+script = ExtResource("1_ahhtf")
+
+[node name="P1Health" type="ProgressBar" parent="." unique_id=1312777375]
+modulate = Color(10.805, 0, 0, 1)
+offset_left = 66.0
+offset_top = 558.0
+offset_right = 432.0
+offset_bottom = 602.0
+value = 100.0
+
+[node name="P2Health" type="ProgressBar" parent="." unique_id=565812872]
+modulate = Color(10.805306, 0, 0, 1)
+offset_left = 755.0
+offset_top = 561.0
+offset_right = 1119.0
+offset_bottom = 601.0
+value = 100.0

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://clbrujxu3sb53"]
+
+[ext_resource type="Script" uid="uid://doy7h3jws261j" path="res://scripts/control.gd" id="1_5p55f"]
+
+[node name="Control" type="Control" unique_id=1676515493]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p55f")
+
+[node name="TextEdit" type="Label" parent="." unique_id=2075779364]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 70.0
+offset_right = 767.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0.5825492, 1.6364455e-06, 4.3317675e-07, 1)
+theme_override_font_sizes/font_size = 64
+text = "\"YOU DIED\" 
+      - player1"
+
+[node name="Button" type="Button" parent="." unique_id=345984500]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 458.0
+offset_right = 665.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0.5391139, 0.96432346, 0.90611374, 1)
+theme_override_font_sizes/font_size = 25
+text = "Menu"
+
+[node name="TryAgain" type="Button" parent="." unique_id=435869826]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 359.0
+offset_right = 663.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(0.5391139, 0.96432346, 0.90611374, 1)
+theme_override_font_sizes/font_size = 25
+text = "Try Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

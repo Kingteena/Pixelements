@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dpl6dgdbq4dnw"]
+
+[ext_resource type="Script" uid="uid://bs4xu55sv5v4n" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bku4iyif5yjci" path="res://assets/play Button.png" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d0m117be476nk" path="res://assets/Quit Button.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dwtbom80ks4ru" path="res://assets/New Piskel.png" id="3_wu84c"]
+
+[node name="MainMenu" type="Control" unique_id=547806810]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+script = ExtResource("1_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1629208609]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer" unique_id=1670441553]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("1_ekxnf")
+texture_pressed = ExtResource("3_wu84c")
+texture_hover = ExtResource("3_wu84c")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer" unique_id=2091025420]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("2_bqqt6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

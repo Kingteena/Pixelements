@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c11jw6ad78wne"]
+
+[ext_resource type="Script" uid="uid://p8s3rixtqxnx" path="res://scripts/game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dtym8nyhukofx" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://d34d4i2hl0avy" path="res://scenes/AttackManager.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dfe1fvvb1oag1" path="res://scenes/hud.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://ba8jyn36bxt3d" path="res://scenes/background.tscn" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://e3v1uejisvbh" path="res://assets/Pixel_Mania.mp3" id="6_u5sy4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = -15.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+distance = -7.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
+
+[node name="Game" type="Node2D" unique_id=1081454395]
+script = ExtResource("1_lnu2h")
+
+[node name="Player" parent="." unique_id=852908302 instance=ExtResource("1_uwrxv")]
+position = Vector2(-77, -54)
+base_element = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1282692084]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2146498824]
+position = Vector2(0, -16)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=64160023]
+position = Vector2(-233, -69)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1257127437]
+position = Vector2(240, -58)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=388069569]
+position = Vector2(1, -77)
+zoom = Vector2(2, 2)
+
+[node name="Player2" parent="." unique_id=1618110890 instance=ExtResource("1_uwrxv")]
+position = Vector2(65, -65)
+player_id = 2
+base_element = 4
+
+[node name="AttackManager" parent="." unique_id=1110637099 instance=ExtResource("4_iywne")]
+
+[node name="HUD" parent="." unique_id=623811147 instance=ExtResource("5_iywne")]
+
+[node name="Node2D" parent="." unique_id=1602097080 instance=ExtResource("6_p57ef")]
+position = Vector2(0, 1)
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=551344601]
+stream = ExtResource("6_u5sy4")
+autoplay = true

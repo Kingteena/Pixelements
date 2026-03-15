@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d34d4i2hl0avy"]
+
+[ext_resource type="Script" uid="uid://cjiynj6d08isv" path="res://scripts/attack_manager.gd" id="1_asm8y"]
+[ext_resource type="PackedScene" uid="uid://b8xd5kc8jjxc8" path="res://scenes/projectile.tscn" id="2_xejvj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_asm8y"]
+blend_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_asm8y"]
+size = Vector2(3, 3)
+
+[sub_resource type="MultiMesh" id="MultiMesh_xejvj"]
+use_colors = true
+mesh = SubResource("QuadMesh_asm8y")
+
+[node name="AttackManager" type="Node2D" unique_id=1110637099 node_paths=PackedStringArray("multi_mesh_node") groups=["attack_manager"]]
+top_level = true
+z_index = 11
+script = ExtResource("1_asm8y")
+bullet_scene = ExtResource("2_xejvj")
+multi_mesh_node = NodePath("MultiMeshInstance2D")
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="." unique_id=1794112339]
+z_index = 100
+material = SubResource("CanvasItemMaterial_asm8y")
+multimesh = SubResource("MultiMesh_xejvj")
